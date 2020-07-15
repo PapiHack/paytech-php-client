@@ -1,0 +1,29 @@
+{
+    "name": "papihack/paytech-php-client",
+    "description": "A PHP Client or SDK for PayTech Online Payment Gateway.",
+    "keywords": [
+        "Paiement", "paiement en ligne", "Sénégal",
+        "Plateforme de paiement en ligne Afrique", "Paiement Sénégal",
+        "Passerelle de paiement en ligne", "PAYTECH", "paytech", "paytech.sn",
+        "Marchand en ligne", "payment gateway", "payment gateway Africa",
+        "online payment gateway", "mobile payments", "best payment gateway",
+        "orange money", "client php", "api", "php client", "library"
+    ],
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "PapiHack",
+            "email": "itdev94@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {
+        "php": "^7.2"
+    },
+    "autoload": {
+        "psr-4": {
+            "PayTech\\": "src/"
+        }
+    }
+}
