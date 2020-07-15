@@ -41,9 +41,9 @@ abstract class MakeRequest
     public static function json($url, $data = [], $headers = []) 
     {
         self::setHeaders([
-            'Content-Type'      => 'application/json;charset=utf-8',
-            'PAYTECH-ENV' => \PayTech\Config::getEnv(),
-            'User-Agent'  => \PayTech\PayTech::VERSION_NAME
+            'Content-Type' => 'application/json;charset=utf-8',
+            'PAYTECH-ENV'  => \PayTech\Config::getEnv(),
+            'User-Agent'   => \PayTech\PayTech::VERSION_NAME
         ]);
 
         array_merge(self::$headers, $headers);
@@ -58,9 +58,9 @@ abstract class MakeRequest
     public static function post($url, $data = [], $headers = []) 
     {
         self::setHeaders([
-            'Content-Type'      => 'application/x-www-form-urlencoded;charset=utf-8',
-            'PAYTECH-ENV' => \PayTech\Config::getEnv(),
-            'User-Agent'  => \PayTech\PayTech::VERSION_NAME
+            'Content-Type' => 'application/x-www-form-urlencoded;charset=utf-8',
+            'PAYTECH-ENV'  => \PayTech\Config::getEnv(),
+            'User-Agent'   => \PayTech\PayTech::VERSION_NAME
         ]);
 
         array_merge(self::$headers, $headers);
