@@ -20,17 +20,17 @@ abstract class ApiResponse extends PayTech
         return self::$success;
     }
 
-    public function getToken() 
+    public static function getToken() 
     {
         return self::$token;
     }
 
-    public function getErrors() 
+    public static function getErrors() 
     {
         return self::$errors;
     }
 
-    public function getRedirectUrl() 
+    public static function getRedirectUrl() 
     {
         return self::$redirectUrl;
     }
