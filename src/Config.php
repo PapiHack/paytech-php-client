@@ -2,6 +2,11 @@
 
 namespace PayTech;
 
+use PayTech\Enums\Currency;
+use PayTech\Enums\Environment;
+use PayTech\Utils\Check;
+use PayTech\Exceptions\CurrencyException;
+
 /**
  * 
  * @author PapiHack
@@ -19,20 +24,18 @@ abstract class Config extends PayTech
     private static  $apiKey;
     private static  $apiSecret;
 
-    private static $query = [];
-    private static $params = [];
-    private static $customeField = [];
+    private static $currency = Currency::XOF;
 
     private static $liveMode = true;
     private static $testMode = false;
 
     private static $isMobile = false;
 
-    private static $currency = Currency::XOF;
-    
-    private static $refCommand = '';
+    private static $ipnUrl;
+    private static $successUrl;
+    private static $cancelUrl;
 
-    private static $notificationUrl = [];
+    private static $env = Environment::TEST;
 
     public static function getApiKey() 
     {
@@ -44,9 +47,9 @@ abstract class Config extends PayTech
         return self::$apiSecret;
     }
 
-    public static function getCustomField() 
+    public static function getCurrency() 
     {
-        return self::$customeField;
+        return strtolower(self::$currency);
     }
 
     public static function getLiveMode() 
@@ -64,14 +67,24 @@ abstract class Config extends PayTech
         return self::$isMobile;
     }
 
-    public static function getCurrency() 
+    public static function getIpnUrl() 
     {
-        return self::$currency;
+        return self::$ipnUrl;
     }
 
-    public static function getNotificationUrl() 
+    public static function getSuccessUrl() 
     {
-        return self::$notificationUrl;
+        return self::$successUrl;
+    }
+
+    public static function getCancelUrl() 
+    {
+        return self::$cancelUrl;
+    }
+
+    public static function getEnv() 
+    {
+        return strtolower(self::$env);
     }
 
     public static function setApiKey($apiKey) 
@@ -84,21 +97,24 @@ abstract class Config extends PayTech
         self::$apiSecret = $apiSecret;
     }
 
-    public static function setCustomField($customeField) 
+    public static function setCurrency($currency)
     {
-        self::$customeField = $customeField;
+        // Check::isCurrencyAllowed($currency) ? self::$currency = $currency : throw new CurrencyException("That Currency is not allowed ! Sorry :(", -99);
+        self::$currency = $currency;
     }
 
     public static function setLiveMode($liveMode) 
     {
         self::$liveMode = $liveMode;
         self::$testMode = !$liveMode;
+        self::setAppropriateEnv();
     }
-
+    
     public static function setTestMode($testMode) 
     {
         self::$testMode = $testMode;
         self::$liveMode = !$testMode;
+        self::setAppropriateEnv();
     }
 
     public static function setIsMobile($isMobile) 
@@ -106,14 +122,25 @@ abstract class Config extends PayTech
         self::$isMobile = $isMobile;
     }
 
-    public static function setCurrency($currency) 
+    public static function setIpnUrl($ipnUrl) 
     {
-        self::$currency = strtolower($currency);
+        self::$ipnUrl = $ipnUrl;
     }
 
-    public static function setNotificationUrl($notificationUrl) 
+    public static function setSuccessUrl($successUrl) 
     {
-        self::$notificationUrl = $notificationUrl;
+        self::$successUrl = $successUrl;
     }
+
+    public static function setCancelUrl($cancelUrl) 
+    {
+        self::$cancelUrl = $cancelUrl;
+    }
+
+    private static function setAppropriateEnv() 
+    {
+        $currentEnv = (self::$testMode) ? Environment::TEST : Environment::PROD;
+        self::$env = strtolower($currentEnv);
+    } 
 
 }

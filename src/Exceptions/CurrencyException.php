@@ -12,11 +12,14 @@ use Exception;
  */
 class CurrencyException extends Exception
 {
-    const authorizeCurrency = [
-        'XOF',
-        'USD',
-        'CAD',
-        'GBP',
-        'MAD'
-    ];
+
+    public function __construct($message, $code = 0)
+    {
+        parent::__construct($message, $code);
+    }
+
+    public function __toString()
+    {
+        return 'The message => '. $this->message;
+    }
 }
