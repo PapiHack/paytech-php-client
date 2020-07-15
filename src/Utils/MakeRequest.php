@@ -79,7 +79,7 @@ abstract class MakeRequest
 
         array_merge(self::$headers, $headers);
 
-        $response = Requests::post($url, self::$headers, ['timeout' => self::$timeout]);
+        $response = Requests::get($url, self::$headers, ['timeout' => self::$timeout]);
 
         return json_decode($response, true);
     }
