@@ -8,32 +8,27 @@ namespace PayTech;
  * @since 07/2020
  * 
  */
-class CustomField 
+abstract class CustomField 
 {
-    private $data = [];
+    private static $data = [];
 
-    public function __construct(Array $data = [])
+    public static function push($data = [])
     {
-        $this->data = $data;
+        self::$data = $data;
     }
 
-    public function push($data = [])
+    public static function set($name, $value)
     {
-        $this->data = $data;
+        self::$data[$name] = $value;
     }
 
-    public function set($name, $value)
+    public static function find($name)
     {
-        $this->data[$name] = $value;
+        return self::$data[$name];
     }
 
-    public function find($name)
+    public static function retrieve()
     {
-        return $this->data[$name];
-    }
-
-    public function retrieve()
-    {
-        return $this->data;
+        return self::$data;
     }
 }

@@ -99,8 +99,15 @@ abstract class Config extends PayTech
 
     public static function setCurrency($currency)
     {
-        // Check::isCurrencyAllowed($currency) ? self::$currency = $currency : throw new CurrencyException("That Currency is not allowed ! Sorry :(", -99);
-        self::$currency = $currency;
+        if (Check::isCurrencyAllowed($currency)) 
+        {
+            self::$currency = $currency;
+        }
+        else 
+        {
+            throw new CurrencyException("That Currency is not allowed for the moment... Sorry :(", -99);
+        }
+
     }
 
     public static function setLiveMode($liveMode) 

@@ -38,13 +38,15 @@ abstract class MakeRequest
         self::$timeout = $timeout;
     }
 
-    public static function json($url, $data = []) 
+    public static function json($url, $data = [], $headers = []) 
     {
         self::setHeaders([
-            'Accept'      => 'application/json',
+            'Content-Type'      => 'application/json;charset=utf-8',
             'PAYTECH-ENV' => \PayTech\Config::getEnv(),
             'User-Agent'  => \PayTech\PayTech::VERSION_NAME
         ]);
+
+        array_merge(self::$headers, $headers);
 
         $jsonPayload = json_encode($data);
 
@@ -53,25 +55,29 @@ abstract class MakeRequest
         return json_decode($response, true);
     }
 
-    public static function post($url, $data = []) 
+    public static function post($url, $data = [], $headers = []) 
     {
         self::setHeaders([
-            'Accept'      => 'application/x-www-form-urlencoded',
+            'Content-Type'      => 'application/x-www-form-urlencoded;charset=utf-8',
             'PAYTECH-ENV' => \PayTech\Config::getEnv(),
             'User-Agent'  => \PayTech\PayTech::VERSION_NAME
         ]);
+
+        array_merge(self::$headers, $headers);
 
         $response = Requests::post($url, self::$headers, $data, ['timeout' => self::$timeout]);
 
         return json_decode($response, true);
     }
 
-    public static function get($url) 
+    public static function get($url, $headers = []) 
     {
         self::setHeaders([
             'PAYTECH-ENV' => \PayTech\Config::getEnv(),
             'User-Agent'  => \PayTech\PayTech::VERSION_NAME
         ]);
+
+        array_merge(self::$headers, $headers);
 
         $response = Requests::post($url, self::$headers, ['timeout' => self::$timeout]);
 
