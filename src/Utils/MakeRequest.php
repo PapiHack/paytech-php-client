@@ -32,7 +32,6 @@ abstract class MakeRequest
         self::$headers = $headers;
     }
 
-
     public static function setTimeout($timeout) 
     {
         self::$timeout = $timeout;

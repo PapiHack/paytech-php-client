@@ -18,7 +18,7 @@ abstract class PayTech
 
     public static function send(InvoiceItem $invoiceItem) 
     {
-        $rawResponse = MakeRequest::post(Config::ROOT_URL_BASE . Config::PAYMENT_REDIRECT_PATH, [
+        $rawResponse = MakeRequest::post(Config::ROOT_URL_BASE . Config::PAYMENT_REQUEST_PATH, [
             'item_name'    => $invoiceItem->getName(),
             'item_price'   => $invoiceItem->getPrice(),
             'command_name' => $invoiceItem->getCommandName(),
