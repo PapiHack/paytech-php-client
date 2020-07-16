@@ -55,7 +55,7 @@ Then you can proceed with :
 
 ```php
     $article_price = 15000;
-    $article = new \PayTech\Invoice\InvoiceItem('article_name', $article_price, 'command_name','ref_command');
+    $article = new \PayTech\Invoice\InvoiceItem('article_name', $article_price, 'command_name', 'ref_command');
 
     /* Make the payment request demand to the API */
 
@@ -77,7 +77,7 @@ You can process the response as you wish by directly manipulating `\PayTech\ApiR
 ## TODO
 
 - tests: cover all use cases
-- get the support team at paytech.sn to clarify certain points
+- get the support team at [paytech.sn](https://paytech.sn) to clarify certain points
 - use mock instead of hitting real endpoint
 
 ## Contributing
