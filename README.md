@@ -17,26 +17,34 @@ First of all, install the package or library via composer
 After that, setup the API config with your parameters like this :
 
     \PayTech\Config::setApiKey('your_api_key');
-    \PayTech\Config::setApiSecret('yout_api_secret');
+    \PayTech\Config::setApiSecret('your_api_secret');
+
     /* 
      * you can set one of this two following parameters 
-     * LiveMode === Production mode 
+     * Notice : LiveMode === Production mode 
     */
+
     \PayTech\Config::setTestMode(true);
     \PayTech\Config::setLiveMode(false);
+
     /* 
      * The PayTech\Enums\Currency class defined authorized currencies 
-     * You can XOF (in the following example) by USD, CAD, GBP or MAD
+     * You can change XOF (in the following example) by USD, CAD, GBP or MAD
     */
+
     \PayTech\Config::setCurrency(\PayTech\Enums\Currency::XOF);
+
     /* !!! Note that if you decide to set the ipn_url, it must be in https !!! */
+
     \PayTech\Config::setIpnUrl('your_ipn_url');
     \PayTech\Config::setSuccessUrl('your_success_url');
     \PayTech\Config::setCanceUrl('your_cancel_url');
+
     /*
      * if you want the mobile success or cancel page, you can set
      * the following parameter
     */
+
     \PayTech\Config::setIsMobile(true);
 
 Then you can proceed with :
@@ -44,9 +52,11 @@ Then you can proceed with :
     $article = new \PayTech\Invoice\InvoiceItem('article_name', article_price, 'command_name', 'ref_command');
 
     /* Make the payment request demand to the API */
+
     \PayTech\PayTech::send($article);
 
     /* Get the API Response */
+
     $response = [
         'success'      => \PayTech\ApiResponse::getSuccess(),
         'errors'       => \PayTech\ApiResponse::getErrors(),
