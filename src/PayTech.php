@@ -29,10 +29,7 @@ abstract class PayTech
             'success_url'  => Config::getIsMobile() ? Config::MOBILE_SUCCESS_URL : Config::getSuccessUrl(),
             'cancel_url'   => Config::getIsMobile() ? Config::MOBILE_CANCEL_URL : Config::getCancelUrl(),
             'custom_field' => CustomField::retrieve()
-        ], [
-            'API_KEY'    => Config::getApiKey(),
-            'API_SECRET' => Config::getApiSecret()
-        ]);
+        ], []);
 
         $jsonResponse = json_decode($rawResponse, true);
 

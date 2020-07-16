@@ -21,8 +21,8 @@ abstract class Config extends PayTech
     const MOBILE_CANCEL_URL     = "https://paytech.sn/mobile/cancel";
     const MOBILE_SUCCESS_URL    = "https://paytech.sn/mobile/success";
 
-    private static  $apiKey;
-    private static  $apiSecret;
+    private static $apiKey;
+    private static $apiSecret;
 
     private static $currency = Currency::XOF;
 

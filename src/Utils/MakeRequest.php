@@ -42,7 +42,10 @@ abstract class MakeRequest
         self::setHeaders([
             'Content-Type' => 'application/json;charset=utf-8',
             'PAYTECH-ENV'  => \PayTech\Config::getEnv(),
-            'User-Agent'   => \PayTech\PayTech::VERSION_NAME
+            'User-Agent'   => \PayTech\PayTech::VERSION_NAME,
+            'API_KEY'      => \PayTech\Config::getApiKey(),
+            'API_SECRET'   => \PayTech\Config::getApiSecret()
+        
         ]);
 
         array_merge(self::$headers, $headers);
@@ -59,7 +62,9 @@ abstract class MakeRequest
         self::setHeaders([
             'Content-Type' => 'application/x-www-form-urlencoded;charset=utf-8',
             'PAYTECH-ENV'  => \PayTech\Config::getEnv(),
-            'User-Agent'   => \PayTech\PayTech::VERSION_NAME
+            'User-Agent'   => \PayTech\PayTech::VERSION_NAME,
+            'API_KEY'      => \PayTech\Config::getApiKey(),
+            'API_SECRET'   => \PayTech\Config::getApiSecret()
         ]);
 
         array_merge(self::$headers, $headers);
@@ -73,7 +78,9 @@ abstract class MakeRequest
     {
         self::setHeaders([
             'PAYTECH-ENV' => \PayTech\Config::getEnv(),
-            'User-Agent'  => \PayTech\PayTech::VERSION_NAME
+            'User-Agent'  => \PayTech\PayTech::VERSION_NAME,
+            'API_KEY'     => \PayTech\Config::getApiKey(),
+            'API_SECRET'  => \PayTech\Config::getApiSecret()
         ]);
 
         array_merge(self::$headers, $headers);
