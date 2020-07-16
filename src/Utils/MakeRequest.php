@@ -54,7 +54,7 @@ abstract class MakeRequest
 
         $response = Requests::post($url, self::$headers, $jsonPayload, ['timeout' => self::$timeout]);
 
-        return json_decode($response, true);
+        return json_decode($response->body, true);
     }
 
     public static function post($url, $data = [], $headers = []) 
@@ -71,7 +71,7 @@ abstract class MakeRequest
 
         $response = Requests::post($url, self::$headers, $data, ['timeout' => self::$timeout]);
 
-        return json_decode($response, true);
+        return json_decode($response->body, true);
     }
 
     public static function get($url, $headers = []) 
@@ -87,7 +87,7 @@ abstract class MakeRequest
 
         $response = Requests::get($url, self::$headers, ['timeout' => self::$timeout]);
 
-        return json_decode($response, true);
+        return json_decode($response->body, true);
     }
     
 }

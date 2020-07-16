@@ -18,7 +18,7 @@ abstract class PayTech
 
     public static function send(InvoiceItem $invoiceItem) 
     {
-        $rawResponse = MakeRequest::post(Config::ROOT_URL_BASE . Config::PAYMENT_REQUEST_PATH, [
+        $response = MakeRequest::post(Config::ROOT_URL_BASE . Config::PAYMENT_REQUEST_PATH, [
             'item_name'    => $invoiceItem->getName(),
             'item_price'   => $invoiceItem->getPrice(),
             'command_name' => $invoiceItem->getCommandName(),
@@ -31,18 +31,16 @@ abstract class PayTech
             'custom_field' => CustomField::retrieve()
         ], []);
 
-        $jsonResponse = json_decode($rawResponse, true);
-
-        if (array_key_exists('token', $jsonResponse)) 
+        if (array_key_exists('token', $response)) 
         {
             ApiResponse::setSuccess(1);
-            ApiResponse::setToken($jsonResponse['token']);
-            ApiResponse::setRedirectUrl(Config::ROOT_URL_BASE . Config::PAYMENT_REDIRECT_PATH . $jsonResponse['token']);
+            ApiResponse::setToken($response['token']);
+            ApiResponse::setRedirectUrl(Config::ROOT_URL_BASE . Config::PAYMENT_REDIRECT_PATH . $response['token']);
         }
-        else if(array_key_exists('error', $jsonResponse)) 
+        else if(array_key_exists('error', $response)) 
         {
             ApiResponse::setSuccess(-1);
-            ApiResponse::setErrors($jsonResponse['error']);
+            ApiResponse::setErrors($response['error']);
         }
         else 
         {
