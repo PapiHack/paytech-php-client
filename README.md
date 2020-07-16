@@ -18,19 +18,20 @@ First of all, install the package or library via composer
 
 After that, setup the API config with your parameters like this :
 
+```php
     \PayTech\Config::setApiKey('your_api_key');
     \PayTech\Config::setApiSecret('your_api_secret');
 
-    /* 
-     * you can set one of this two following parameters 
-     * Notice : LiveMode === Production mode 
+    /*
+     * you can set one of this two following parameters
+     * Notice : LiveMode === Production mode
     */
 
     \PayTech\Config::setTestMode(true);
     \PayTech\Config::setLiveMode(false);
 
-    /* 
-     * The PayTech\Enums\Currency class defined authorized currencies 
+    /*
+     * The PayTech\Enums\Currency class defined authorized currencies
      * You can change XOF (in the following example) by USD, CAD, GBP or MAD
     */
 
@@ -48,10 +49,13 @@ After that, setup the API config with your parameters like this :
     */
 
     \PayTech\Config::setIsMobile(true);
+```
 
 Then you can proceed with :
 
-    $article = new \PayTech\Invoice\InvoiceItem('article_name', article_price, 'command_name', 'ref_command');
+```php
+    $article_price = 15000;
+    $article = new \PayTech\Invoice\InvoiceItem('article_name', $article_price, 'command_name','ref_command');
 
     /* Make the payment request demand to the API */
 
@@ -65,6 +69,7 @@ Then you can proceed with :
         'token'        => \PayTech\ApiResponse::getToken(),
         'redirect_url' => \PayTech\ApiResponse::getRedirectUrl(),
     ];
+```
 
 After that, if you have a success response, you can redirect your user to the `$response['redirect_url']` so that he can make the payment.  
 You can process the response as you wish by directly manipulating `\PayTech\ApiResponse`.
