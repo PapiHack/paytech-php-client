@@ -6,7 +6,7 @@
         "Paiement Sénégal", "Paiement", "paiement en ligne", "Sénégal",
         "Passerelle de paiement en ligne", "PAYTECH", "paytech", "paytech.sn",
         "orange money", "client php", "api", "php client", "library", "sdk",
-        "php sdk", "paytech php sdk"
+        "php sdk", "paytech php sdk", "client api"
     ],
     "type": "library",
     "license": "MIT",
