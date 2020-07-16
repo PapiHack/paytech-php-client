@@ -16,9 +16,10 @@
             "email": "itdev94@gmail.com"
         }
     ],
-    "minimum-stability": "stable",
+    "minimum-stability": "dev",
+    "prefer-stable": true,
     "require": {
-        "php": "^7.2",
+        "php": "^7.3",
         "rmccue/requests": "^1.7"
     },
     "autoload": {
@@ -30,5 +31,9 @@
         "psr-4": {
             "PayTech\\Tests\\": "tests/"
         }
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^9.0",
+        "pestphp/pest": "^0.2.3"
     }
 }

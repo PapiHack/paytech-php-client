@@ -2,8 +2,6 @@
 
 namespace PayTech\Invoice;
 
-use PayTech\Utils\Check;
-
 /**
  * 
  * @author PapiHack
