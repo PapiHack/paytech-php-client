@@ -42,6 +42,11 @@ abstract class PayTech
             ApiResponse::setSuccess(-1);
             ApiResponse::setErrors($response['error']);
         }
+        else if(array_key_exists('message', $response)) 
+        {
+            ApiResponse::setSuccess(-1);
+            ApiResponse::setErrors($response['message']);
+        }
         else 
         {
             ApiResponse::setSuccess(-1);
