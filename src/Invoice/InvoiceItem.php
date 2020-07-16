@@ -48,21 +48,21 @@ class InvoiceItem
 
     public function setName($name)
     {
-        $this->$name = $name;
+        $this->name = $name;
     }
 
     public function setPrice($price)
     {
-        $this->$price = $price;
+        $this->price = $price;
     }
 
     public function setCommandName($commandName)
     {
-        $this->$commandName = $commandName;
+        $this->commandName = $commandName;
     }
 
     public function setRefCommand($refCommand)
     {
-        $this->$refCommand = $refCommand;
+        $this->refCommand = $refCommand;
     }
 } 
