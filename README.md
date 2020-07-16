@@ -60,7 +60,7 @@ You can process the response as you wish by directly manipulating `\PayTech\ApiR
 ## TODO
 
 - tests: cover all use cases
-- get the support team at paps.sn to clarify certain points
+- get the support team at paytech.sn to clarify certain points
 - use mock instead of hitting real endpoint
 
 ## Contributing
