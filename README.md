@@ -8,6 +8,8 @@
 
 This is a simple `SDK Client` or `API Client` for `PayTech Online Payment Gateway`.
 
+Check out [PayTech SN Website](https://paytech.sn).
+
 ## How to use it
 
 First of all, install the package or library via composer
