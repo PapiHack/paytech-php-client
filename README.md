@@ -57,6 +57,10 @@ Then you can proceed with :
     $article_price = 15000;
     $article = new \PayTech\Invoice\InvoiceItem('article_name', $article_price, 'command_name', 'ref_command');
 
+    /* You can also add custom data or fields like this */
+
+    \PayTech\CustomField::set('your_field_name', 'your_field_value');
+
     /* Make the payment request demand to the API */
 
     \PayTech\PayTech::send($article);
