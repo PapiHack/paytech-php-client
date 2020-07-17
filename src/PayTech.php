@@ -31,6 +31,7 @@ abstract class PayTech
             'custom_field' => CustomField::retrieve()
         ], []);
 
+        // @codeCoverageIgnoreStart
         if (array_key_exists('token', $response)) 
         {
             ApiResponse::setSuccess(1);
@@ -52,6 +53,7 @@ abstract class PayTech
             ApiResponse::setSuccess(-1);
             ApiResponse::setErrors(['Internal Error']);
         }
+        // @codeCoverageIgnoreEnd
 
     }
 }

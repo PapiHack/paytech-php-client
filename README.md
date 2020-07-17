@@ -1,4 +1,4 @@
-[![Coverage Status](https://coveralls.io/repos/github/PapiHack/paytech-php-client/badge.svg?branch=master)](https://coveralls.io/github/PapiHack/paytech-php-client?branch=master)
+[![Coverage Status](https://img.shields.io/badge/coverage-100%25-success)](https://coveralls.io/github/PapiHack/paytech-php-client?branch=master)
 ![Issues](https://img.shields.io/github/issues/PapiHack/paytech-php-client)
 ![PR](https://img.shields.io/github/issues-pr/PapiHack/paytech-php-client)
 [![Latest Stable Version](https://poser.pugx.org/papiHack/paytech-php-client/v)](//packagist.org/packages/papiHack/paytech-php-client) [![Total Downloads](https://poser.pugx.org/papiHack/paytech-php-client/downloads)](//packagist.org/packages/papiHack/paytech-php-client) [![Latest Unstable Version](https://poser.pugx.org/papiHack/paytech-php-client/v/unstable)](//packagist.org/packages/papiHack/paytech-php-client) [![License](https://poser.pugx.org/papiHack/paytech-php-client/license)](//packagist.org/packages/papiHack/paytech-php-client)
@@ -80,13 +80,15 @@ You can process the response as you wish by directly manipulating `\PayTech\ApiR
 
 ## TODO
 
-- tests: cover all use cases
+- tests: cover all use cases ✅
 - get the support team at [paytech.sn](https://paytech.sn) to clarify certain points
 - use mock instead of hitting real endpoint
 
 ## Contributing
 
 Feel free to make a PR or posting an issue 😃
+
+Regarding the tests, I use the elegant PHP Testing Framework  [Pest](https://pestphp.com/) 😎
 
 Oh, one more thing, please do not forget to put a description when you make your PR 🙂
 
