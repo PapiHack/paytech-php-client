@@ -35,7 +35,7 @@ abstract class Config extends PayTech
     private static $successUrl;
     private static $cancelUrl;
 
-    private static $env = Environment::TEST;
+    private static $env = Environment::PROD;
 
     public static function getApiKey() 
     {

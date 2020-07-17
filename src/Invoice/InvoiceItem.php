@@ -2,7 +2,7 @@
 
 namespace PayTech\Invoice;
 
-use PayTech\Utils\Check;
+use Exception;
 
 /**
  * 
@@ -53,7 +53,14 @@ class InvoiceItem
 
     public function setPrice($price)
     {
-        $this->price = $price;
+        if (is_int($price) && $price > 100) 
+        {
+            $this->price = $price;
+        }
+        else 
+        {
+            throw new Exception('Price must be a number and greather than 1000 !');
+        }
     }
 
     public function setCommandName($commandName)

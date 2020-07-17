@@ -2,6 +2,8 @@
 
 namespace PayTech;
 
+use Exception;
+
 /**
  * 
  * @author PapiHack
@@ -24,7 +26,14 @@ abstract class CustomField
 
     public static function find($name)
     {
-        return self::$data[$name];
+        if (array_key_exists($name, self::$data)) 
+        {
+            return self::$data[$name];
+        }
+        else 
+        {
+            throw new Exception('The '.$name.' key doesn\'t exist !');
+        }
     }
 
     public static function retrieve()
