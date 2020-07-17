@@ -28,6 +28,7 @@ After that, setup the API config with your parameters like this :
     /*
      * you can set one of this two following parameters
      * Notice : LiveMode === Production mode
+     * !!! By default LiveMode is enable (true) !!!
     */
 
     \PayTech\Config::setTestMode(true);
@@ -36,6 +37,7 @@ After that, setup the API config with your parameters like this :
     /*
      * The PayTech\Enums\Currency class defined authorized currencies
      * You can change XOF (in the following example) by USD, CAD, GBP or MAD
+     * !!! Notice that XOF is the default currency !!!
     */
 
     \PayTech\Config::setCurrency(\PayTech\Enums\Currency::XOF);
