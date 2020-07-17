@@ -84,6 +84,7 @@ You can process the response as you wish by directly manipulating `\PayTech\ApiR
 ## TODO
 
 - tests: cover all use cases ✅
+- try to make a wrapper for IPN response
 - get the support team at [paytech.sn](https://paytech.sn) to clarify certain points
 - use mock instead of hitting real endpoint
 
