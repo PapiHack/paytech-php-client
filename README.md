@@ -1,3 +1,5 @@
+# PayTech - PHP API Client (installable with Composer)
+
 [![Coverage Status](https://img.shields.io/badge/coverage-100%25-success)](https://coveralls.io/github/PapiHack/paytech-php-client?branch=master)
 ![Issues](https://img.shields.io/github/issues/PapiHack/paytech-php-client)
 ![PR](https://img.shields.io/github/issues-pr/PapiHack/paytech-php-client)
@@ -6,8 +8,6 @@
 [![Latest Unstable Version](https://poser.pugx.org/papihack/paytech-php-client/v/unstable)](//packagist.org/packages/papihack/paytech-php-client)
 [![License](https://poser.pugx.org/papihack/paytech-php-client/license)](//packagist.org/packages/papihack/paytech-php-client)
 [![Open Source Love png1](https://badges.frapsoft.com/os/v1/open-source.png?v=103)](https://github.com/ellerbrock/open-source-badges/)
-
-# PayTech - PHP API Client (installable with Composer)
 
 This is a simple `SDK Client` or `API Client` for `PayTech Online Payment Gateway`.
 
