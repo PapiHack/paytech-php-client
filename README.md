@@ -30,6 +30,8 @@ After that, setup the API config with your parameters like this :
      * you can just set the env mode via \PayTech\Enums\Env::TEST or \PayTech\Enums\Env::PROD
      * Like the following example
      * !!! By default env is PROD !!!
+     * You can also directly set test or prod as a string if you want
+     * Like \PayTech\Config::setEnv('test') or \PayTech\Config::setEnv('prod')
     */
 
     \PayTech\Config::setEnv(\PayTech\Enums\Env::PROD);
