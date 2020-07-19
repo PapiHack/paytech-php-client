@@ -1,4 +1,4 @@
-# PayTech - PHP API Client (installable with Composer)
+# PayTech - PHP API Client
 
 [![Coverage Status](https://img.shields.io/badge/coverage-99.25%25-success)](https://coveralls.io/github/PapiHack/paytech-php-client?branch=master)
 ![Issues](https://img.shields.io/github/issues/PapiHack/paytech-php-client)
