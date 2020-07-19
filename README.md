@@ -26,13 +26,13 @@ After that, setup the API config with your parameters like this :
     \PayTech\Config::setApiSecret('your_api_secret');
 
     /*
-     * you can set one of this two following parameters
-     * Notice : LiveMode === Production mode
-     * !!! By default LiveMode is enable (true) !!!
+     * you can set one of this two environment TEST or PROD
+     * you can just set the env mode via \PayTech\Enums\Env::TEST or \PayTech\Enums\Env::PROD
+     * Like the following example
+     * !!! By default env is PROD !!!
     */
 
-    \PayTech\Config::setTestMode(true);
-    \PayTech\Config::setLiveMode(false);
+    \PayTech\Config::setEnv(\PayTech\Enums\Env::PROD);
 
     /*
      * The PayTech\Enums\Currency class defined authorized currencies
