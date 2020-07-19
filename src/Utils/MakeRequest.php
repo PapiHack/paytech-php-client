@@ -43,7 +43,6 @@ abstract class MakeRequest
             'Content-Type' => 'application/json;charset=utf-8',
             'API_KEY'      => \PayTech\Config::getApiKey(),
             'API_SECRET'   => \PayTech\Config::getApiSecret()
-        
         ]);
 
         array_merge(self::$headers, $headers);
