@@ -114,14 +114,12 @@ abstract class Config extends PayTech
     {
         self::$liveMode = $liveMode;
         self::$testMode = !$liveMode;
-        // self::setAppropriateEnv();
     }
     
     private static function setTestMode($testMode) 
     {
         self::$testMode = $testMode;
         self::$liveMode = !$testMode;
-        // self::setAppropriateEnv();
     }
 
     public static function setIsMobile($isMobile) 
@@ -143,12 +141,6 @@ abstract class Config extends PayTech
     {
         self::$cancelUrl = $cancelUrl;
     }
-
-    // private static function setAppropriateEnv() 
-    // {
-    //     $currentEnv = (self::$testMode) ? Environment::TEST : Environment::PROD;
-    //     self::$env = strtolower($currentEnv);
-    // }
     
     public static function setEnv($env) 
     {
@@ -169,10 +161,10 @@ abstract class Config extends PayTech
         {
             case 'test': 
                 self::setTestMode(true);
-                self::setLiveMode(false);
+            break;
             case 'prod':
-                self::setTestMode(false);
                 self::setLiveMode(true);
+            break;
         }
     }
 
