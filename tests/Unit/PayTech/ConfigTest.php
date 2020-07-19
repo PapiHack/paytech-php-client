@@ -59,3 +59,13 @@ use \PayTech\Config;
      $this->expectException(\PayTech\Exceptions\CurrencyException::class);
      Config::setCurrency('dummy currency');
  });
+
+ it('Should raise an Exception when env is not allowed', function () {
+     $this->expectException(\Exception::class);
+     Config::setEnv('dummyEnv');
+ });
+
+ it('Should set Env when env is allowed', function () {
+    Config::setEnv(\PayTech\Enums\Environment::TEST);
+    $this->assertIsString(Config::getEnv());
+});

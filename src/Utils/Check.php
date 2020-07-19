@@ -31,6 +31,6 @@ abstract class Check
 
     public static function isEnvAllowed($env) 
     {
-        return array_search(strtoupper($env), self::autorizedEnv);
+        return in_array(strtoupper($env), self::autorizedEnv);
     }
 }
