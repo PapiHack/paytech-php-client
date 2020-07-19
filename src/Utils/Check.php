@@ -11,7 +11,7 @@ namespace PayTech\Utils;
 abstract class Check 
 {
 
-    const authorizeCurrency = [
+    const authorizedCurrency = [
         'XOF',
         'USD',
         'CAD',
@@ -19,8 +19,18 @@ abstract class Check
         'MAD'
     ];
 
+    const autorizedEnv = [
+        'TEST',
+        'PROD'
+    ];
+
     public static function isCurrencyAllowed($currency) 
     {
-        return array_search($currency, self::authorizeCurrency);
+        return array_search($currency, self::authorizedCurrency);
+    }
+
+    public static function isEnvAllowed($env) 
+    {
+        return array_search($$env, self::autorizedEnv);
     }
 }

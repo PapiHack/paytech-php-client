@@ -41,8 +41,6 @@ abstract class MakeRequest
     {
         self::setHeaders([
             'Content-Type' => 'application/json;charset=utf-8',
-            'PAYTECH-ENV'  => \PayTech\Config::getEnv(),
-            'User-Agent'   => \PayTech\PayTech::VERSION_NAME,
             'API_KEY'      => \PayTech\Config::getApiKey(),
             'API_SECRET'   => \PayTech\Config::getApiSecret()
         
@@ -61,8 +59,6 @@ abstract class MakeRequest
     {
         self::setHeaders([
             'Content-Type' => 'application/x-www-form-urlencoded;charset=utf-8',
-            'PAYTECH-ENV'  => \PayTech\Config::getEnv(),
-            'User-Agent'   => \PayTech\PayTech::VERSION_NAME,
             'API_KEY'      => \PayTech\Config::getApiKey(),
             'API_SECRET'   => \PayTech\Config::getApiSecret()
         ]);
@@ -77,8 +73,6 @@ abstract class MakeRequest
     public static function get($url, $headers = []) 
     {
         self::setHeaders([
-            'PAYTECH-ENV' => \PayTech\Config::getEnv(),
-            'User-Agent'  => \PayTech\PayTech::VERSION_NAME,
             'API_KEY'     => \PayTech\Config::getApiKey(),
             'API_SECRET'  => \PayTech\Config::getApiSecret()
         ]);
