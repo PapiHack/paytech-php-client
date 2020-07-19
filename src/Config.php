@@ -148,6 +148,32 @@ abstract class Config extends PayTech
     {
         $currentEnv = (self::$testMode) ? Environment::TEST : Environment::PROD;
         self::$env = strtolower($currentEnv);
-    } 
+    }
+    
+    public static function setEnv($env) 
+    {
+        if (Check::isEnvAllowed($env))
+        {
+            self::$env = strtolower($env);
+            self::setApproriateLiveAndTestMode();
+        }
+        else
+        {
+            throw new \Exception('The '. $env. ' is not allowed. Please chose between test or prod !');
+        }
+    }
+
+    private static function setApproriateLiveAndTestMode() 
+    {
+        switch (self::getEnv()) 
+        {
+            case 'test': 
+                self::setTestMode(true);
+                self::setLiveMode(false);
+            case 'prod':
+                self::setTestMode(false);
+                self::setLiveMode(true);
+        }
+    }
 
 }

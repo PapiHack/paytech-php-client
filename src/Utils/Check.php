@@ -26,11 +26,11 @@ abstract class Check
 
     public static function isCurrencyAllowed($currency) 
     {
-        return array_search($currency, self::authorizedCurrency);
+        return array_search(strtoupper($currency), self::authorizedCurrency);
     }
 
     public static function isEnvAllowed($env) 
     {
-        return array_search($$env, self::autorizedEnv);
+        return array_search(strtoupper($env), self::autorizedEnv);
     }
 }
