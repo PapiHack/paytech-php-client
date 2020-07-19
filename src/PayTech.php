@@ -13,7 +13,7 @@ use PayTech\Utils\MakeRequest;
  */
 abstract class PayTech 
 {
-    const VERSION      = "1.0.2";
+    const VERSION      = "1.0.3";
     const VERSION_NAME = "PayTech PHP SDK Client v1 aka Naruto";
 
     public static function send(InvoiceItem $invoiceItem) 
