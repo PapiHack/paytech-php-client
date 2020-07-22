@@ -3,6 +3,7 @@
 namespace PayTech;
 
 use Exception;
+use PayTech\Utils\Serializer;
 
 /**
  * 
@@ -38,6 +39,6 @@ abstract class CustomField
 
     public static function retrieve()
     {
-        return self::$data;
+        return new Serializer(self::$data);
     }
 }
