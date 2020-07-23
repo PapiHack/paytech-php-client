@@ -95,7 +95,7 @@ You can process the response as you wish by directly manipulating `\PayTech\ApiR
 
 ## Contributing
 
-Feel free to make a PR or posting an issue 😃
+Feel free to make a PR or report an issue 😃
 
 Regarding the tests, I use the elegant PHP Testing Framework  [Pest](https://pestphp.com/) 😎
 
