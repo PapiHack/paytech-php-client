@@ -103,5 +103,5 @@ Oh, one more thing, please do not forget to put a description when you make your
 
 ## Contributors
 
-- <a href="https://itdev.herokuapp.com" alt="The IT DEV">M.B.C.M</a>
-[![](https://img.shields.io/twitter/follow/the_it_dev?style=social)](https://twitter.com/the_it_dev)
+- [M.B.C.M](https://itdev.herokuapp.com)
+[![My Twitter Link](https://img.shields.io/twitter/follow/the_it_dev?style=social)](https://twitter.com/the_it_dev)
