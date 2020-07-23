@@ -1,6 +1,6 @@
 # PayTech - PHP API Client
 
-[![Coverage Status](https://img.shields.io/badge/coverage-95.35%25-brightgreen)](https://coveralls.io/github/PapiHack/paytech-php-client?branch=master)
+[![Coverage Status](https://img.shields.io/badge/coverage-100%25-brightgreen)](https://coveralls.io/github/PapiHack/paytech-php-client?branch=master)
 ![Issues](https://img.shields.io/github/issues/PapiHack/paytech-php-client)
 ![PR](https://img.shields.io/github/issues-pr/PapiHack/paytech-php-client)
 [![Latest Stable Version](https://poser.pugx.org/papihack/paytech-php-client/v)](//packagist.org/packages/papihack/paytech-php-client)
@@ -38,7 +38,8 @@ After that, setup the API config with your parameters like this :
 
     /*
      * The PayTech\Enums\Currency class defined authorized currencies
-     * You can change XOF (in the following example) by USD, CAD, GBP or MAD
+     * You can change XOF (in the following example) by USD, CAD or another currency
+     * All allowed currencies are in \PayTech\Enums\Currency class
      * !!! Notice that XOF is the default currency !!!
     */
 
