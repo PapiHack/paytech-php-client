@@ -2,35 +2,24 @@
 
 namespace PayTech\Utils;
 
+use PayTech\Enums\Currency;
+use PayTech\Enums\Environment;
+
 /**
  * 
  * @author PapiHack
  * @since 07/2020
  * 
  */
-abstract class Check 
-{
-
-    const authorizedCurrency = [
-        'XOF',
-        'USD',
-        'CAD',
-        'GBP',
-        'MAD'
-    ];
-
-    const autorizedEnv = [
-        'TEST',
-        'PROD'
-    ];
-
+abstract class Check
+{ 
     public static function isCurrencyAllowed($currency) 
     {
-        return array_search(strtoupper($currency), self::authorizedCurrency);
+        return defined(Currency::class .'::'. strtoupper($currency));
     }
 
-    public static function isEnvAllowed($env) 
+    public static function isEnvAllowed($env)
     {
-        return in_array(strtoupper($env), self::autorizedEnv);
+        return defined(Environment::class .'::'. strtoupper($env));
     }
 }

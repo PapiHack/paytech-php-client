@@ -28,7 +28,7 @@ abstract class PayTech
             'ipn_url'      => Config::getIpnUrl(),
             'success_url'  => Config::getIsMobile() ? Config::MOBILE_SUCCESS_URL : Config::getSuccessUrl(),
             'cancel_url'   => Config::getIsMobile() ? Config::MOBILE_CANCEL_URL : Config::getCancelUrl(),
-            'custom_field' => json_encode(CustomField::retrieve())
+            'custom_field' => CustomField::retrieve()->toJSONString()
         ], []);
 
         // @codeCoverageIgnoreStart

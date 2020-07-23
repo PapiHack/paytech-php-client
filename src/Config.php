@@ -110,11 +110,13 @@ abstract class Config extends PayTech
 
     }
 
+    // @codeCoverageIgnoreStart
     private static function setLiveMode($liveMode) 
     {
         self::$liveMode = $liveMode;
         self::$testMode = !$liveMode;
     }
+    // @codeCoverageIgnoreEnd
     
     private static function setTestMode($testMode) 
     {
@@ -155,6 +157,7 @@ abstract class Config extends PayTech
         }
     }
 
+    // @codeCoverageIgnoreStart
     private static function setApproriateLiveAndTestMode() 
     {
         switch (self::getEnv()) 
@@ -167,5 +170,6 @@ abstract class Config extends PayTech
             break;
         }
     }
+    // @codeCoverageIgnoreEnd
 
 }
