@@ -42,6 +42,7 @@ Class Serializer
         return http_build_query($this->data);
     }
 
+    // @codeCoverageIgnoreStart
     private function arrayToXml($array, $rootElement = null, $xml = null) { 
         $xmlDocument = $xml; 
 
@@ -56,5 +57,6 @@ Class Serializer
         } 
           
         return $xmlDocument->asXML(); 
-    } 
+    }
+    // @codeCoverageIgnoreEnd
 }
