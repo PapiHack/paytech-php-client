@@ -20,6 +20,6 @@ it('Should return a String', function() {
  });
 
  it('Should return a XML', function() {
-    $this->assertXmlStringEqualsXmlString("<custom_fields><nom>papi</nom><job>coder</job></custom_fields>", 
+    $this->assertXmlStringEqualsXmlString("<custom_field><nom>papi</nom><job>coder</job></custom_field>", 
     (new Serializer(['nom' => 'papi', 'job' => 'coder']))->toXMLString());
  });

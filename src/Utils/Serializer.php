@@ -34,7 +34,7 @@ Class Serializer
 
     public function toXMLString()
     {
-        return $this->arrayToXml($this->data, '<custom_fields/>');
+        return $this->arrayToXml($this->data, '<custom_field/>');
     }
 
     public function toQueryString()
