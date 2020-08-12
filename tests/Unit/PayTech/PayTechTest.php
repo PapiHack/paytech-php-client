@@ -2,7 +2,6 @@
 
 namespace Tests\Unit\PayTech;
 
-use PayTech\ApiResponse;
 use PayTech\PayTech;
 
 /**
