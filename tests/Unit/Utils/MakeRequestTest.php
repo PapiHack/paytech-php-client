@@ -21,11 +21,10 @@ use \PayTech\Utils\MakeRequest;
 });
 
 test('Headers attribute should be empty by default', function () {
-    // $this->assertEmpty(MakeRequest::getHeaders());
     $this->assertGreaterThanOrEqual(1, MakeRequest::getHeaders());
 });
 
-it('Should change default timeout value & set headers attrivute', function () {
+it('Should change default timeout value & set headers attribute', function () {
     MakeRequest::setTimeout(20);
     MakeRequest::setHeaders(['ACCEPT' => 'application/json;charset=utf-8']);
     $this->assertNotEmpty(MakeRequest::getHeaders());
