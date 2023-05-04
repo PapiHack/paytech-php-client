@@ -59,7 +59,7 @@ class InvoiceItem
         }
         else 
         {
-            throw new Exception('Price must be a number and greather than 1000 !');
+            throw new Exception('Price must be a number and greather than 100 !');
         }
     }
 
